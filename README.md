@@ -12,8 +12,8 @@ You cannot run this DLL and stock Primashock / stock OpenXR Toolkit at the same 
 - NVIDIA D3D11 variable rate shading: inner disk full rate, outside 1/16
 - Built for OpenComposite games that draw **each eye as its own picture**. That path is meant to work universally on those titles
 - Tested in Elite Dangerous (with EDVR) and Skyrim VR
+- Exception: games like **Fallout 4 VR**. Those titles render stereo ass-backwards as one wide side-by-side picture instead of one picture per eye, so the gaze circle cannot land on both eyes. Leave foveation **off** for that kind of game
 - Needs an NVIDIA GPU and a headset whose OpenXR runtime reports eye gaze (Pimax Dream Air, Crystal, Varjo, Quest Pro, and others)
-- Fallout 4 VR draws one wide side-by-side picture. Leave foveation **off** for that game
 - Elite station names, menus, and target marks can stay sharp without sharpening the world outside the circle. That match is Elite-only (`OpenComposite_EliteDangerous64` / any application name that contains `EliteDangerous`). Other games keep the gaze circle
 
 ## What this is not
