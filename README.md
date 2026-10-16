@@ -26,11 +26,11 @@ You cannot run this DLL and stock Primashock / stock OpenXR Toolkit at the same 
 ## Install (like Primashock)
 
 1. Close the game (`EliteDangerous64`, `SkyrimVR`, and `Fallout4VR` must not be running)
-2. Back up `C:\\Program Files\\OpenXR-Toolkit\\XR_APILAYER_MBUCCHIA_toolkit.dll`
+2. Back up `C:\Program Files\OpenXR-Toolkit\XR_APILAYER_MBUCCHIA_toolkit.dll`
 3. Copy the built `XR_APILAYER_MBUCCHIA_toolkit.dll` over that file
-4. Copy `VRS.hlsl` into `C:\\Program Files\\OpenXR-Toolkit\\shaders\\` only if you changed the shader
+4. Copy `VRS.hlsl` into `C:\Program Files\OpenXR-Toolkit\shaders\` only if you changed the shader
 5. Do not copy a `.json` unless you are installing the layer from scratch
-6. Do not write someone else's registry. The overlay already stores per-app keys under `HKCU\\SOFTWARE\\OpenXR_Toolkit`
+6. Do not write someone else's registry. The overlay already stores per-app keys under `HKCU\SOFTWARE\OpenXR_Toolkit`
 
 Open the Toolkit overlay in-game (Ctrl+F2). Turn on variable rate shading, custom inner/outer rates, and eye tracking.
 
@@ -40,7 +40,7 @@ This project is a fork of [mbucchia/OpenXR-Toolkit](https://github.com/mbucchia/
 
 The full Toolkit tree (so you can build) lives in the fork: [tolikkozlenko1-eng/OpenXR-Toolkit](https://github.com/tolikkozlenko1-eng/OpenXR-Toolkit). Gaze DFR lives on the `gaze-dfr` branch.
 
-Build: Visual Studio 2022 (`v143`), `OpenXR-Toolkit.sln`, target `XR_APILAYER_MBUCCHIA_toolkit`, Release x64. The post-build copy/sign step can fail on paths with spaces. The DLL is still written to `bin\\x64\\Release`. Do not commit `nuget.exe`.
+Build: Visual Studio 2022 (`v143`), `OpenXR-Toolkit.sln`, target `XR_APILAYER_MBUCCHIA_toolkit`, Release x64. The post-build copy/sign step can fail on paths with spaces. The DLL is still written to `bin\x64\Release`. Do not commit `nuget.exe`.
 
 ## License
 
