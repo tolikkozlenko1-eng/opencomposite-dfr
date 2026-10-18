@@ -1,4 +1,4 @@
-name: Publish release
+name: Clean release parts
 "on":
   push:
     branches: [main]
@@ -7,11 +7,17 @@ name: Publish release
 permissions:
   contents: write
 jobs:
-  publish:
+  clean:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Publish
+      - name: Remove temporary parts
         env:
           GH_TOKEN: ${{ github.token }}
-        run: bash release-parts/publish.sh
+        run: |
+          git config user.name "tolikkozlenko1-eng"
+          git config user.email "tolikkozlenko1@gmail.com"
+          git rm -r release-parts
+          git rm .github/workflows/publish-release.yml
+          git commit -m "Remove the temporary release parts."
+          git push
