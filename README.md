@@ -8,13 +8,13 @@ You cannot run this DLL and stock Primashock / stock OpenXR Toolkit at the same 
 
 ## What it does
 
-- One eye-tracked circle (both eyes share one gaze pose from `XR_EXT_eye_gaze_interaction`)
+The gaze circle works universally on OpenComposite games.
+
+- One eye-tracked circle. The headset reports one gaze pose through `XR_EXT_eye_gaze_interaction`, and that pose is projected into the picture the game is drawing
+- A game that draws each eye as its own picture gets the circle on that picture
+- A game that draws both eyes into one wide side-by-side picture gets a circle in each half, when each half matches the per-eye aspect. Same rule, no separate game
 - NVIDIA D3D11 variable rate shading: inner disk full rate, outside 1/16
-- Built for OpenComposite games that draw **each eye as its own picture**. That path is meant to work universally on those titles
-- Tested in Elite Dangerous (with EDVR) and Skyrim VR
-- Exception: games like **Fallout 4 VR**. Those titles render stereo ass-backwards as one wide side-by-side picture instead of one picture per eye, so the gaze circle cannot land on both eyes. Leave foveation **off** for that kind of game
 - Needs an NVIDIA GPU and a headset whose OpenXR runtime reports eye gaze (Pimax Dream Air, Crystal, Varjo, Quest Pro, and others)
-- Elite station names, menus, and target marks can stay sharp without sharpening the world outside the circle. That match is Elite-only (`OpenComposite_EliteDangerous64` / any application name that contains `EliteDangerous`). Other games keep the gaze circle
 
 ## What this is not
 
@@ -25,7 +25,7 @@ You cannot run this DLL and stock Primashock / stock OpenXR Toolkit at the same 
 
 ## Install (like Primashock)
 
-1. Close the game (`EliteDangerous64`, `SkyrimVR`, and `Fallout4VR` must not be running)
+1. Close the game. The layer DLL is locked while a game is running
 2. Back up `C:\Program Files\OpenXR-Toolkit\XR_APILAYER_MBUCCHIA_toolkit.dll`
 3. Copy the built `XR_APILAYER_MBUCCHIA_toolkit.dll` over that file
 4. Copy `VRS.hlsl` into `C:\Program Files\OpenXR-Toolkit\shaders\` only if you changed the shader
@@ -36,7 +36,7 @@ Open the Toolkit overlay in-game (Ctrl+F2). Turn on variable rate shading, custo
 
 ## Source
 
-This project is a fork of [mbucchia/OpenXR-Toolkit](https://github.com/mbucchia/OpenXR-Toolkit) (MIT). Matthieu Bucchianeri's Toolkit is the layer host. Our changes are the OpenComposite gaze circle, the one-mask-per-eye-picture path, and the Elite overlay full-rate gate.
+This project is a fork of [mbucchia/OpenXR-Toolkit](https://github.com/mbucchia/OpenXR-Toolkit) (MIT). Matthieu Bucchianeri's Toolkit is the layer host. Our change is the OpenComposite gaze circle: one circle on a per-eye picture, and a circle in each half of a side-by-side picture.
 
 The full Toolkit tree (so you can build) lives in the fork: [tolikkozlenko1-eng/OpenXR-Toolkit](https://github.com/tolikkozlenko1-eng/OpenXR-Toolkit). Gaze DFR lives on the `gaze-dfr` branch.
 
