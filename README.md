@@ -10,7 +10,7 @@ Close the game. Unzip the file. Right-click `Install.bat` and choose Run as admi
 
 Start the game. Press Ctrl+F2. Turn on variable rate shading and eye tracking.
 
-The package replaces `C:\\Program Files\\OpenXR-Toolkit\\XR_APILAYER_MBUCCHIA_toolkit.dll` and registers the layer. Stock OpenXR Toolkit and Primashock use that same slot, so they cannot run at the same time. Per-game overlay settings stay in the registry. This package does not change them.
+The package replaces `C:/Program Files/OpenXR-Toolkit/XR_APILAYER_MBUCCHIA_toolkit.dll` and registers the layer. Stock OpenXR Toolkit and Primashock use that same slot, so they cannot run at the same time. Per-game overlay settings stay in the registry. This package does not change them.
 
 Needs an NVIDIA GPU, OpenComposite, and a headset whose OpenXR runtime reports eye gaze (Pimax Dream Air, Crystal, Varjo, Quest Pro, and others).
 
@@ -38,7 +38,7 @@ This project is a fork of [mbucchia/OpenXR-Toolkit](https://github.com/mbucchia/
 
 The full Toolkit tree (so you can build) lives in the fork: [tolikkozlenko1-eng/OpenXR-Toolkit](https://github.com/tolikkozlenko1-eng/OpenXR-Toolkit). Gaze DFR lives on the `gaze-dfr` branch.
 
-Build: Visual Studio 2022 (`v143`), `OpenXR-Toolkit.sln`, target `XR_APILAYER_MBUCCHIA_toolkit`, Release x64. The post-build copy/sign step can fail on paths with spaces. The DLL is still written to `bin\\x64\\Release`. Do not commit `nuget.exe`.
+Build: Visual Studio 2022 (`v143`), `OpenXR-Toolkit.sln`, target `XR_APILAYER_MBUCCHIA_toolkit`, Release x64. The post-build copy/sign step can fail on paths with spaces. The DLL is still written to `bin/x64/Release`. Do not commit `nuget.exe`.
 
 ## License
 
